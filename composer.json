@@ -9,6 +9,7 @@
     "ext-json": "*"
   },
   "require-dev": {
+    "guzzlehttp/guzzle": "@stable",
     "phpunit/phpunit": "*",
     "phpmd/phpmd" : "@stable",
     "friendsofphp/php-cs-fixer": "*"
