@@ -4,7 +4,6 @@ namespace Cloudflare\API\Endpoints;
 
 use Cloudflare\API\Adapter\Adapter;
 use Cloudflare\API\Traits\BodyAccessorTrait;
-use stdClass;
 
 class ZoneSubscriptions implements API
 {
@@ -30,7 +29,7 @@ class ZoneSubscriptions implements API
         ];
     }
 
-    public function addZoneSubscription(string $zoneId, string $ratePlanId = ''): stdClass
+    public function addZoneSubscription(string $zoneId, string $ratePlanId = ''): \stdClass
     {
         $options = [];
 

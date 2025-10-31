@@ -4,7 +4,6 @@ namespace Cloudflare\API\Endpoints;
 
 use Cloudflare\API\Adapter\Adapter;
 use Cloudflare\API\Traits\BodyAccessorTrait;
-use stdClass;
 
 class AccountRoles implements API
 {
@@ -20,7 +19,7 @@ class AccountRoles implements API
         $this->adapter = $adapter;
     }
 
-    public function listAccountRoles(string $accountId, int $page = 1, int $perPage = 20): stdClass
+    public function listAccountRoles(string $accountId, int $page = 1, int $perPage = 20): \stdClass
     {
         $query = [
             'page'     => $page,
