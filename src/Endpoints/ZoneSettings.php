@@ -120,7 +120,7 @@ class ZoneSettings implements API
         return false;
     }
 
-    public function updateBrowserCacheTtlSetting(string $zoneID, mixed $value)
+    public function updateBrowserCacheTtlSetting(string $zoneID, int $value)
     {
         $return = $this->adapter->patch(
             'zones/' . $zoneID . '/settings/browser_cache_ttl',
@@ -226,7 +226,7 @@ class ZoneSettings implements API
         return false;
     }
 
-    public function updateServerSideExcludeSetting(string $zoneID, mixed $value)
+    public function updateServerSideExcludeSetting(string $zoneID, string $value)
     {
         $return = $this->adapter->patch(
             'zones/' . $zoneID . '/settings/server_side_exclude',
