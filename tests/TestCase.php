@@ -19,8 +19,7 @@ abstract class TestCase extends BaseTestCase
         $path = sprintf('%s/Fixtures/%s', __DIR__, $fixture);
 
         $this->assertFileExists($path);
-
-        $stream = Psr7\stream_for(file_get_contents($path));
+        $stream = Psr7\Utils::streamFor(file_get_contents($path));
 
         $this->assertInstanceOf(Psr7\Stream::class, $stream);
 
