@@ -25,11 +25,18 @@ class Pools implements API
 
     /**
      * @param string $accountID
+     * @param int $page
+     * @param int $perPage
      * @return mixed
      */
-    public function listPools(string $accountID)
+    public function listPools(string $accountID, int $page = 1, int $perPage = 20)
     {
-        $pools = $this->adapter->get('accounts/' . $accountID . '/load_balancers/pools');
+        $query = [
+            'page'     => $page,
+            'per_page' => $perPage,
+        ];
+
+        $pools = $this->adapter->get('accounts/' . $accountID . '/load_balancers/pools', $query);
         $this->body = json_decode($pools->getBody());
 
         return $this->body->result;

@@ -20,9 +20,14 @@ class ZoneSubscriptions implements API
         $this->adapter = $adapter;
     }
 
-    public function listZoneSubscriptions(string $zoneId): \stdClass
+    public function listZoneSubscriptions(string $zoneId, int $page = 1, int $perPage = 20): \stdClass
     {
-        $user = $this->adapter->get('zones/' . $zoneId . '/subscriptions');
+        $query = [
+            'page'     => $page,
+            'per_page' => $perPage,
+        ];
+
+        $user = $this->adapter->get('zones/' . $zoneId . '/subscriptions', $query);
         $this->body = json_decode($user->getBody());
 
         return (object)[
