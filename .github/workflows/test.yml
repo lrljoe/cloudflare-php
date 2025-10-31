@@ -20,6 +20,8 @@ jobs:
     - uses: shivammathur/setup-php@v2
       with:
         php-version: ${{ matrix.php-versions }}
+        tools: phpunit:latest
+        ini-values: memory_limit=512M
 
     - name: Cache Composer dependencies
       uses: actions/cache@v4
