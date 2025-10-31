@@ -12,4 +12,4 @@ return PhpCsFixer\Config::create()
         'array_syntax' => ['syntax' => 'short'],
     ])
     ->setFinder($finder)
-;
+; 
