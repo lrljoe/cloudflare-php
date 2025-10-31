@@ -25,7 +25,7 @@ class TLS implements API
      * @param string $zoneID The ID of the zone
      * @return string|false
      */
-    public function getTLSClientAuth($zoneID)
+    public function getTLSClientAuth(string $zoneID)
     {
         $return = $this->adapter->get(
             'zones/' . $zoneID . '/settings/tls_client_auth'
@@ -43,7 +43,7 @@ class TLS implements API
      * @param string $zoneID The ID of the zone
      * @return bool
      */
-    public function enableTLS13($zoneID)
+    public function enableTLS13(string $zoneID)
     {
         $return = $this->adapter->patch(
             'zones/' . $zoneID . '/settings/tls_1_3',
@@ -62,7 +62,7 @@ class TLS implements API
      * @param string $zoneID The ID of the zone
      * @return bool
      */
-    public function disableTLS13($zoneID)
+    public function disableTLS13(string $zoneID)
     {
         $return = $this->adapter->patch(
             'zones/' . $zoneID . '/settings/tls_1_3',
@@ -82,7 +82,7 @@ class TLS implements API
      * @param string $minimumVersion The version to update to
      * @return bool
      */
-    public function changeMinimumTLSVersion($zoneID, $minimumVersion)
+    public function changeMinimumTLSVersion(string $zoneID, string $minimumVersion)
     {
         $return = $this->adapter->patch(
             'zones/' . $zoneID . '/settings/min_tls_version',
@@ -104,7 +104,7 @@ class TLS implements API
      * @param string $value The value of the zone setting
      * @return bool
      */
-    public function updateTLSClientAuth($zoneID, $value)
+    public function updateTLSClientAuth(string $zoneID, string $value)
     {
         $return = $this->adapter->patch(
             'zones/' . $zoneID . '/settings/tls_client_auth',

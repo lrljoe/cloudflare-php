@@ -22,7 +22,7 @@ class ZoneSettings implements API
         $this->adapter = $adapter;
     }
 
-    public function getMinifySetting($zoneID)
+    public function getMinifySetting(string $zoneID)
     {
         $return = $this->adapter->get(
             'zones/' . $zoneID . '/settings/minify'
@@ -36,7 +36,7 @@ class ZoneSettings implements API
         return false;
     }
 
-    public function getRocketLoaderSetting($zoneID)
+    public function getRocketLoaderSetting(string $zoneID)
     {
         $return = $this->adapter->get(
             'zones/' . $zoneID . '/settings/rocket_loader'
@@ -50,7 +50,7 @@ class ZoneSettings implements API
         return false;
     }
 
-    public function getAlwaysOnlineSetting($zoneID)
+    public function getAlwaysOnlineSetting(string $zoneID)
     {
         $return = $this->adapter->get(
             'zones/' . $zoneID . '/settings/always_online'
@@ -64,7 +64,7 @@ class ZoneSettings implements API
         return false;
     }
 
-    public function getEmailObfuscationSetting($zoneID)
+    public function getEmailObfuscationSetting(string $zoneID)
     {
         $return = $this->adapter->get(
             'zones/' . $zoneID . '/settings/email_obfuscation'
@@ -78,7 +78,7 @@ class ZoneSettings implements API
         return false;
     }
 
-    public function getServerSideExcludeSetting($zoneID)
+    public function getServerSideExcludeSetting(string $zoneID)
     {
         $return = $this->adapter->get(
             'zones/' . $zoneID . '/settings/server_side_exclude'
@@ -92,7 +92,7 @@ class ZoneSettings implements API
         return false;
     }
 
-    public function getHotlinkProtectionSetting($zoneID)
+    public function getHotlinkProtectionSetting(string $zoneID)
     {
         $return = $this->adapter->get(
             'zones/' . $zoneID . '/settings/hotlink_protection'
@@ -106,7 +106,7 @@ class ZoneSettings implements API
         return false;
     }
 
-    public function getBrowserCacheTtlSetting($zoneID)
+    public function getBrowserCacheTtlSetting(string $zoneID)
     {
         $return = $this->adapter->get(
             'zones/' . $zoneID . '/settings/browser_cache_ttl'
@@ -120,7 +120,7 @@ class ZoneSettings implements API
         return false;
     }
 
-    public function updateBrowserCacheTtlSetting($zoneID, $value)
+    public function updateBrowserCacheTtlSetting(string $zoneID, string $value)
     {
         $return = $this->adapter->patch(
             'zones/' . $zoneID . '/settings/browser_cache_ttl',
@@ -158,7 +158,7 @@ class ZoneSettings implements API
         return false;
     }
 
-    public function updateRocketLoaderSetting($zoneID, $value)
+    public function updateRocketLoaderSetting(string $zoneID, string $value)
     {
         $return = $this->adapter->patch(
             'zones/' . $zoneID . '/settings/rocket_loader',
@@ -175,7 +175,7 @@ class ZoneSettings implements API
         return false;
     }
 
-    public function updateAlwaysOnlineSetting($zoneID, $value)
+    public function updateAlwaysOnlineSetting(string $zoneID, string $value)
     {
         $return = $this->adapter->patch(
             'zones/' . $zoneID . '/settings/always_online',
@@ -192,7 +192,7 @@ class ZoneSettings implements API
         return false;
     }
 
-    public function updateEmailObfuscationSetting($zoneID, $value)
+    public function updateEmailObfuscationSetting(string $zoneID, string $value)
     {
         $return = $this->adapter->patch(
             'zones/' . $zoneID . '/settings/email_obfuscation',
@@ -209,7 +209,7 @@ class ZoneSettings implements API
         return false;
     }
 
-    public function updateHotlinkProtectionSetting($zoneID, $value)
+    public function updateHotlinkProtectionSetting(string $zoneID, string $value)
     {
         $return = $this->adapter->patch(
             'zones/' . $zoneID . '/settings/hotlink_protection',
@@ -226,7 +226,7 @@ class ZoneSettings implements API
         return false;
     }
 
-    public function updateServerSideExcludeSetting($zoneID, $value)
+    public function updateServerSideExcludeSetting(string $zoneID, string $value)
     {
         $return = $this->adapter->patch(
             'zones/' . $zoneID . '/settings/server_side_exclude',
