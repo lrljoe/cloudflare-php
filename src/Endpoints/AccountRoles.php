@@ -20,9 +20,14 @@ class AccountRoles implements API
         $this->adapter = $adapter;
     }
 
-    public function listAccountRoles(string $accountId): stdClass
+    public function listAccountRoles(string $accountId, int $page = 1, int $perPage = 20): stdClass
     {
-        $roles      = $this->adapter->get('accounts/' . $accountId . '/roles');
+        $query = [
+            'page'     => $page,
+            'per_page' => $perPage,
+        ];
+        $roles      = $this->adapter->get('accounts/' . $accountId . '/roles', $query);
+
         $this->body = json_decode($roles->getBody());
 
         return (object)[
